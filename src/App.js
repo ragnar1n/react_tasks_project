@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
 
-function App() {
+import Tasks from "./components/Tasks/Tasks";
+import NewTask from "./components/NewTask/NewTask";
+
+const tasksD=[
+    {
+        id: 'e1',
+        date: new Date(2023,0,10),
+        title:'study c++',
+        amount:'low'
+    },
+    {
+        id:'e2',
+        date: new Date(2024,0,5),
+        title:'study js',
+        amount:'high'
+    }
+]
+
+const App = ()=> {
+
+    const [tasks,setTasks]=useState(tasksD)
+    const addTaskhandler=(task)=>{
+        setTasks((previousTasks)=>{
+            return [task,...previousTasks]
+        })
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <NewTask onAddTask={addTaskhandler}></NewTask>
+        <Tasks tasks={tasks}></Tasks>
     </div>
   );
 }
