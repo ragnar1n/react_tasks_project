@@ -13,7 +13,7 @@ const TasksList=(props)=>{
             return <TaskItem
             id={task.id}
             title={task.title}
-            amount={task.amount}
+            priority={task.priority}
             date={task.date}
             ></TaskItem>
         })

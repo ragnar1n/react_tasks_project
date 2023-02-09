@@ -9,15 +9,15 @@ const options = [
 
 const TaskForm=(props)=>{
     const [enteredTitle,setEnteredTitle]=useState ('')
-    const [enteredAmount,setEnteredAmount]=useState ('low')
+    const [enteredPr,setEnteredPr]=useState ('low')
     const [enteredDate,setEnteredDate]=useState ('')
 
     const titleChangeHandler=(event)=>{
         setEnteredTitle(event.target.value)
 
     }
-    const amountChangeHandler=(event)=>{
-        setEnteredAmount(event.target.value)
+    const priorityChangeHandler=(event)=>{
+        setEnteredPr(event.target.value)
 
     }
     const dateChangeHandler=(event)=>{
@@ -27,12 +27,12 @@ const TaskForm=(props)=>{
         event.preventDefault()
         const taskData={
             title:enteredTitle,
-            amount:enteredAmount,
+            priority:enteredPr,
             date:new Date(enteredDate)
         }
         props.onSaveTaskData(taskData)
         setEnteredTitle('')
-        setEnteredAmount('low')
+        setEnteredPr('low')
         setEnteredDate('')
     }
     return(
@@ -44,7 +44,7 @@ const TaskForm=(props)=>{
                 </div>
                 <div className='new-expense__control'>
                     <label>Priority</label>
-                    <select name='amount' className='ne-t' onChange={amountChangeHandler} value={enteredAmount}>
+                    <select name='priority' className='ne-t' onChange={priorityChangeHandler} value={enteredPr}>
                         <option value='low'>Low</option>
                         <option value='medium'>Medium</option>
                         <option value='high'>High</option>

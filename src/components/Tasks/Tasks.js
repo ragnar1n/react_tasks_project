@@ -12,7 +12,7 @@ const Tasks=(props)=>{
     }
 
     const filteredTasks=props.tasks.filter((priority)=>{if(filteredPr !=='all')
-        return priority.amount===filteredPr
+        return priority.priority===filteredPr
     else return priority})
 
     return(

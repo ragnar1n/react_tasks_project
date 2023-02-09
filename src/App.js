@@ -9,13 +9,13 @@ const tasksD=[
         id: 'e1',
         date: new Date(2023,0,10),
         title:'study c++',
-        amount:'low'
+        priority:'low'
     },
     {
         id:'e2',
         date: new Date(2024,0,5),
         title:'study js',
-        amount:'high'
+        priority:'high'
     }
 ]
 

@@ -14,7 +14,7 @@ const TaskItem=(props)=>{
                 <div className='expense-item__description'>
                     <h2>{props.title}</h2>
                     <div className='expense-item__price'>
-                        <h4>{props.amount}</h4>
+                        <h4>{props.priority}</h4>
                     </div>
                 </div>
             </Card>
