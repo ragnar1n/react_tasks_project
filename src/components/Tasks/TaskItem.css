@@ -33,6 +33,7 @@
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
+    width: 5rem;
 }
 
 @media (min-width: 580px) {
